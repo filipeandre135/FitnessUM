@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="527.0" prefWidth="897.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controladores.ControladorUtilizador">
+  <children>
+    <TabPane prefHeight="491.0" prefWidth="866.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="22.0">
+      <tabs>
+        <Tab text="As Minhas Actividades">
+          <content>
+            <AnchorPane minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+              <children>
+                <Separator layoutX="211.0" orientation="VERTICAL" prefHeight="490.0" prefWidth="6.0" AnchorPane.bottomAnchor="1.0" AnchorPane.topAnchor="1.0" />
+                <TextArea fx:id="detalhesTxtArea" editable="false" layoutX="652.0" layoutY="40.0" prefHeight="347.0" prefWidth="200.0" wrapText="true" />
+                <TableView fx:id="tabelaActividades" prefHeight="422.9999000000025" prefWidth="414.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="15.0">
+                  <columns>
+                    <TableColumn maxWidth="350.0" minWidth="150.0" prefWidth="177.0" text="Actividade">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="nome" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="175.0" minWidth="70.0" prefWidth="70.0" text="Calorias">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="calorias" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="175.0" minWidth="35.0" prefWidth="88.0" text="Data">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="dataString" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="67.0" text="Tempo(mins)">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="tempo" />
+                      </cellValueFactory>
+                    </TableColumn>
+                  </columns>
+                </TableView>
+                <Button fx:id="btNovaActividade" layoutX="47.0" layoutY="53.0" minHeight="15.999900000002526" mnemonicParsing="false" onAction="#novaActividade" prefHeight="29.0" prefWidth="130.0" text="Nova Actividade" />
+                <Label layoutX="24.0" layoutY="188.0" text="Ver por:" />
+                <Button layoutX="46.0" layoutY="337.0" mnemonicParsing="false" onAction="#getActividadesTodas" text="Mostrar todas" />
+                <TextField fx:id="txtAno" layoutX="62.0" layoutY="219.0" prefWidth="64.0" />
+                <TextField fx:id="txtMes" layoutX="62.0" layoutY="258.0" prefWidth="64.0" />
+                <Button layoutX="140.0" layoutY="238.0" mnemonicParsing="false" onAction="#getActividadesAnoMes" text="OK" />
+                <Label layoutX="24.0" layoutY="222.0" text="Ano:" />
+                <Label layoutX="24.0" layoutY="261.0" text="Mês:" />
+                <Button layoutX="46.0" layoutY="100.0" mnemonicParsing="false" onAction="#removerActividade" prefHeight="30.0" prefWidth="131.0" text="Remover Actividade" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Os meus Amigos">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <ListView fx:id="listaAmigos" layoutX="40.0" layoutY="31.0" prefHeight="446.0" prefWidth="204.0" />
+                <Separator layoutX="285.0" layoutY="0.0" orientation="VERTICAL" prefHeight="511.0" />
+                <TextField id="txtNome" fx:id="txtNomeAmigo" alignment="CENTER" editable="false" layoutX="344.0" layoutY="46.0" prefWidth="239.0" text="Nome" />
+                <TextField id="txtAltura" fx:id="txtAlturaAmigo" alignment="CENTER_RIGHT" editable="false" layoutX="344.0" layoutY="79.0" prefWidth="64.0" text="Altura" />
+                <TextField fx:id="txtPesoAmigo" alignment="CENTER_RIGHT" editable="false" layoutX="344.0" layoutY="150.0" prefWidth="79.0" text="Peso" />
+                <Button fx:id="btVerActividadesAmigo" layoutX="376.0" layoutY="233.0" mnemonicParsing="false" onAction="#verActividadesAmigo" prefWidth="141.0" text="Ver actividades" />
+                <TextField fx:id="txtIdadeAmigo" alignment="CENTER" editable="false" layoutX="344.0" layoutY="118.0" prefWidth="64.0" text="Idade" />
+                <TextField fx:id="txtDesportoFavAmigo" alignment="CENTER" editable="false" layoutX="408.0" layoutY="180.0" prefWidth="200.0" text="Desporto Favorito" />
+                <Label layoutX="297.0" layoutY="49.0" text="Nome:" />
+                <Label layoutX="297.0" layoutY="82.0" text="Altura:" />
+                <Label layoutX="297.0" layoutY="153.0" text="Peso:" />
+                <Label layoutX="297.0" layoutY="121.0" text="Idade:" />
+                <Label layoutX="297.0" layoutY="183.0" text="Desporto Favorito:" />
+                <Button id="btAdicionarAmigo" fx:id="btadicionarAmigo" layoutX="376.0" layoutY="348.0" mnemonicParsing="false" onAction="#adicionarAmigo" prefWidth="141.0" text="Adicionar amigo" />
+                <TextField fx:id="txtEmailAmigo" layoutX="346.0" layoutY="316.0" prefWidth="239.0" />
+                <Label layoutX="302.0" layoutY="319.0" text="Email:" />
+                <Separator layoutX="284.0" layoutY="277.0" prefWidth="568.0" />
+                <Label layoutX="423.0" layoutY="153.0" text="Kgs" />
+                <Label layoutX="409.0" layoutY="82.0" text="cms" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="O meu perfil">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <Label layoutX="37.0" layoutY="243.0" text="Total Calorias perdidas:" />
+                <TextField fx:id="txtNome" alignment="CENTER" editable="true" layoutX="170.0" layoutY="74.0" prefWidth="239.0" text="Nome" />
+                <TextField fx:id="txtAltura" alignment="CENTER_RIGHT" editable="false" layoutX="170.0" layoutY="110.0" prefWidth="64.0" text="Altura" />
+                <TextField id="txtPesoAmigo" fx:id="txtPeso" alignment="CENTER_RIGHT" editable="false" layoutX="169.0" layoutY="178.0" prefWidth="79.0" text="Peso" />
+                <TextField id="txtIdadeAmigo" fx:id="txtIdade" alignment="CENTER" editable="false" layoutX="170.0" layoutY="146.0" prefWidth="64.0" text="Idade" />
+                <TextField id="txtDesportoFavAmigo" fx:id="txtDesportoFav" alignment="CENTER" editable="false" layoutX="170.0" layoutY="208.0" prefWidth="200.0" text="Desporto Favorito" />
+                <Label layoutX="37.0" layoutY="77.0" text="Nome:" />
+                <Label layoutX="37.0" layoutY="110.0" text="Altura:" />
+                <Label layoutX="37.0" layoutY="181.0" text="Peso:" />
+                <Label layoutX="37.0" layoutY="149.0" text="Idade:" />
+                <Label layoutX="37.0" layoutY="211.0" text="Desporto Favorito:" />
+                <Label layoutX="288.0" layoutY="181.0" text="Kgs" />
+                <Label layoutX="240.0" layoutY="113.0" text="cms" />
+                <TextField fx:id="txtCalorias" editable="false" layoutX="170.0" layoutY="240.0" prefWidth="79.0" />
+                <TableView fx:id="tabelaRecordes" layoutX="528.0" layoutY="69.0" prefHeight="363.0" prefWidth="296.0">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="161.0" text="Actividade">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="actividade" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="135.0" text="Distância em 10 mins">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="d10" />
+                      </cellValueFactory>
+                    </TableColumn>
+                  </columns>
+                </TableView>
+                <Label layoutX="652.0" layoutY="36.0" text="Recordes" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Label fx:id="userLabel" layoutY="6.0" text="Olá, Utilizador!" AnchorPane.rightAnchor="14.0" />
+  </children>
+</AnchorPane>

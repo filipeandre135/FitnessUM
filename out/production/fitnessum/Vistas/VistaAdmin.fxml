@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="603.0" prefWidth="1097.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controladores.ControladorAdmin">
+  <children>
+    <TabPane prefHeight="576.0" prefWidth="1097.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+      <tabs>
+        <Tab text="Eventos">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="545.0" prefWidth="1096.9999000000025">
+              <children>
+                <Separator layoutX="211.0" orientation="VERTICAL" prefHeight="490.0" prefWidth="6.0" AnchorPane.bottomAnchor="1.0" AnchorPane.topAnchor="1.0" />
+                <TableView id="table_escolas" fx:id="tabelaEventos" prefHeight="524.0" prefWidth="857.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="9.0">
+                  <columns>
+                    <TableColumn maxWidth="350.0" minWidth="150.0" prefWidth="200.0" text="Nome">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="nome" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="175.0" minWidth="80.0" prefWidth="100.0" text="Local">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="localInscricao" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="175.0" minWidth="80.0" prefWidth="163.0" text="Data Limite de Inscrição">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="DataString" />
+                      </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="112.0" text="Nº Participantes">
+                      <cellValueFactory>
+                        <PropertyValueFactory property="np" />
+                      </cellValueFactory>
+                    </TableColumn>
+                  </columns>
+                </TableView>
+                <Label layoutX="59.0" layoutY="29.0" prefHeight="16.0" prefWidth="119.0" text="Gestão de Eventos" />
+                <Button layoutX="14.0" layoutY="71.0" mnemonicParsing="false" onAction="#addEvento" text="Adicionar novo evento" />
+                <Button fx:id="btaddParticipante" disable="true" layoutX="14.0" layoutY="216.0" mnemonicParsing="false" onAction="#addParticipante" text="Adicionar participante" />
+                <TextField fx:id="txtEmail" layoutX="14.0" layoutY="185.0" prefWidth="200.0" promptText="Email do participante" text="" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Simulação">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <ListView id="classificacao" fx:id="participantes" layoutX="283.0" layoutY="72.0" prefHeight="401.0" prefWidth="200.0" />
+                <Label layoutX="283.0" layoutY="40.0" text="Participantes:" />
+                <Button layoutX="22.0" layoutY="173.0" mnemonicParsing="false" onAction="#simularEvento" prefWidth="88.0" text="Simular" />
+                <ComboBox fx:id="cbEventos" layoutX="22.0" layoutY="82.0" onAction="#selectEvento" prefHeight="21.0" prefWidth="114.0" promptText="Evento">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <ComboBox fx:id="cbMetereologia" layoutX="22.0" layoutY="127.0" prefHeight="21.0" prefWidth="114.0" promptText="Metereologia">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ComboBox>
+                <TextArea fx:id="txtDetalhes" editable="false" layoutX="533.0" layoutY="72.0" prefHeight="291.0" prefWidth="200.0" wrapText="true" />
+                <Label layoutX="535.0" layoutY="43.0" text="Resultado:" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Label layoutY="6.0" text="Olá, Utilizador!" AnchorPane.rightAnchor="5.0" />
+  </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+Basquetebol
+Caminhada
+Ciclismo
+CiclismoMontanha
+Corrida
+Futebol
+Ginastica
+Natacao
+Orientacao
+Skating
+Tenis
+Voleibol

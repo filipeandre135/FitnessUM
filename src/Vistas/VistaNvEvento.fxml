@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="407.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controladores.ControladorNvEvento">
+  <children>
+    <Button layoutX="185.0" layoutY="347.0" mnemonicParsing="false" onAction="#addEvento" text="OK" />
+    <Label layoutX="14.0" layoutY="34.0" text="Actividade:" />
+    <Label layoutX="13.0" layoutY="67.0" text="Nome:" />
+    <Label disable="false" layoutX="13.0" layoutY="96.0" text="Data Limite:" visible="true" />
+    <TextField id="dataTextField" fx:id="txtData" disable="false" editable="true" layoutX="135.0" layoutY="93.0" prefWidth="155.0" visible="true" />
+    <Label layoutX="292.0" layoutY="96.0" text="(dd-mm-aaaa)" />
+    <ComboBox id="cbDesportos" fx:id="cbActividades" layoutX="135.0" layoutY="34.0" prefHeight="21.0" prefWidth="164.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList"></FXCollections>
+      </items>
+    </ComboBox>
+    <Label layoutX="13.0" layoutY="159.0" text="Máximo Participantes:" />
+    <TextField id="tempoTxtField" fx:id="txtNp" alignment="CENTER_RIGHT" layoutX="135.0" layoutY="156.0" prefWidth="69.0" />
+    <Label fx:id="distanciaLabel" disable="false" layoutX="14.0" layoutY="157.0" text="Distância:" visible="false" />
+    <TextField fx:id="distanciaTxt" alignment="CENTER_RIGHT" layoutX="130.0" layoutY="154.0" prefWidth="69.0" visible="false" />
+    <Label fx:id="m1Label" layoutX="204.0" layoutY="157.0" text="m" visible="false" />
+    <Label id="VelMaxlabel" fx:id="velMaxLabel" layoutX="14.0" layoutY="189.0" text="Velocidade Máxima:" visible="false" />
+    <Label id="AltMaxLabel" fx:id="altMaxLabel" layoutX="14.0" layoutY="220.0" text="Altitude Max:" visible="false" />
+    <Label id="AltMinLabel" fx:id="altMinLabel" layoutX="13.0" layoutY="251.0" text="Altitude Min:" visible="false" />
+    <TextField id="VelMaxtxt" fx:id="velMaxTxt" alignment="CENTER_RIGHT" layoutX="130.0" layoutY="186.0" prefWidth="69.0" visible="false" />
+    <TextField id="AltMaxTxt" fx:id="altMaxTxt" alignment="CENTER_RIGHT" layoutX="130.0" layoutY="217.0" prefWidth="69.0" visible="false" />
+    <TextField id="AltMinTxt" fx:id="altMinTxt" alignment="CENTER_RIGHT" layoutX="130.0" layoutY="248.0" prefWidth="69.0" visible="false" />
+    <Label fx:id="msLabel" layoutX="204.0" layoutY="189.0" text="m/s" visible="false" />
+    <Label fx:id="m2Label" layoutX="203.0" layoutY="220.0" text="m" visible="false" />
+    <Label fx:id="m3Label" layoutX="203.0" layoutY="251.0" text="m" visible="false" />
+    <TextField fx:id="txtNome" layoutX="135.0" layoutY="64.0" prefWidth="176.0" />
+    <TextField fx:id="txtLocal" layoutX="135.0" layoutY="125.0" prefWidth="200.0" />
+    <Label layoutX="13.0" layoutY="128.0" text="Local Inscrição:" />
+  </children>
+</AnchorPane>
